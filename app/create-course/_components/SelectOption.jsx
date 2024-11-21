@@ -41,7 +41,7 @@ function SelectOption() {
                         <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value="light">Begginer</SelectItem>
+                        <SelectItem value="Begginer">Begginer</SelectItem>
                         <SelectItem value="Intermediate">Intermediate</SelectItem>
                         <SelectItem value="Advance">Advance</SelectItem>
                     </SelectContent>

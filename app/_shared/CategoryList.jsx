@@ -1,7 +1,7 @@
 export default [
     {
         id:1,
-        name: 'program',
+        name: 'Programming',
         icon : '/1802977.png',
         prompt : ''
 
