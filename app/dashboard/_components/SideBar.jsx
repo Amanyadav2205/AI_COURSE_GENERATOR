@@ -41,6 +41,7 @@ function SideBar() {
   return (
     <div className = 'fixed h-full md:w-64 p-5 shadow-md'>
       <Image src = {'/logo2.svg'} width={60} height= {70} /> 
+    
       <hr  className = 'my-5'/>
       
      
