@@ -1,14 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import { HiOutlinePuzzle } from "react-icons/hi";
+import EditCourseBasicInfo from "./EditCourseBasicInfo";
 
-function CourseBasicInfo({ course }) {
+function CourseBasicInfo({ course,refreshData }) {
   return (
     <div className="border p-6 rounded-lg shadow-md mt-6 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <h2 className="font-bold text-3xl text-primary">
-            {course?.courseOutput?.course?.name}
+          <h2 className="font-bold text-3xl text-purple-500">
+            {course?.courseOutput?.course?.name}<EditCourseBasicInfo course={course} refreshData={()=>refreshData(true)}/>
           </h2>
           <p className="text-sm text bg-white mt-4">
             {course?.courseOutput?.course?.description}

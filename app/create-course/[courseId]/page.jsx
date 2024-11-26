@@ -15,7 +15,9 @@ function CourseLayout({ params }) {
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
-    if (params) GetCourse();
+    if (params) {
+      GetCourse();
+    }
   }, [params, user]);
 
   const GetCourse = async () => {
@@ -37,7 +39,7 @@ function CourseLayout({ params }) {
         Course Layout
       </h2>
       {/* Basic Info */}
-      <CourseBasicInfo course={course} />
+      <CourseBasicInfo course={course} refreshData={()=>GetCourse()} />
 
       {/* Course Details */}
       <CourseDetail course={course} />
