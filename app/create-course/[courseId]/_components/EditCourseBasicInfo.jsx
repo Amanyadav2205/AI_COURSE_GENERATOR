@@ -11,7 +11,9 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { CourseList } from "@/configs/schema";
-  
+import { Input } from "@/components/ui/input";
+import { DialogFooter } from "@/components/ui/dialog";
+import { DialogClose } from "@/components/ui/dialog";
   
 
 function EditCourseBasicInfo({course,refreshData}){

@@ -5,7 +5,7 @@ import { useUser } from "@clerk/nextjs";
 import { db } from "@/configs/db";
 import React, { useEffect, useState } from "react";
 import { and, eq } from "drizzle-orm";
-import CourseBasicInfo from "./_components/CourseBasicinfo";
+import CourseBasicInfo from "./_components/CourseBasicInfo";
 import CourseDetail from "./_components/CourseDetail";
 import ChapterList from "./_components/ChapterList";
 
@@ -38,6 +38,7 @@ function CourseLayout({ params }) {
       <h2 className="font-bold text-center text-2xl text-purple-500">
         Course Layout
       </h2>
+
       {/* Basic Info */}
       <CourseBasicInfo course={course} refreshData={()=>GetCourse()} />
 
