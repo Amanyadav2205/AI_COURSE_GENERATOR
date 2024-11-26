@@ -19,6 +19,7 @@ function CourseBasicInfo({ course,refreshData }) {
             Start
           </button>
         </div>
+        
         <div>
           <Image
             src={"/place.png"}
