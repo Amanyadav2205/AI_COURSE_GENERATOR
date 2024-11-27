@@ -5,7 +5,7 @@ import { useUser } from "@clerk/nextjs";
 import { db } from "@/configs/db";
 import React, { useEffect, useState } from "react";
 import { and, eq } from "drizzle-orm";
-import CourseBasicInfo from "./_components/CourseBasicInfo";
+import CourseBasicInfo from "./_components/CourseBasicinfo";
 import CourseDetail from "./_components/CourseDetail";
 import ChapterList from "./_components/ChapterList";
 
@@ -13,11 +13,10 @@ import ChapterList from "./_components/ChapterList";
 function CourseLayout({ params }) {
   const { user } = useUser();
   const [course, setCourse] = useState(null);
+  
 
   useEffect(() => {
-    if (params) {
-      GetCourse();
-    }
+    params && GetCourse();
   }, [params, user]);
 
   const GetCourse = async () => {
@@ -31,11 +30,12 @@ function CourseLayout({ params }) {
         )
       );
     setCourse(result[0]);
+    console.log(result);
   };
 
   return (
     <div className="mt-10 px-5 md:px-16 lg:px-32">
-      <h2 className="font-bold text-center text-2xl text-purple-500">
+      <h2 className="font-bold text-center text-2xl text-primary">
         Course Layout
       </h2>
 

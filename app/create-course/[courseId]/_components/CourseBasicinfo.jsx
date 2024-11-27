@@ -3,7 +3,7 @@ import Image from "next/image";
 import { HiOutlinePuzzle } from "react-icons/hi";
 import EditCourseBasicInfo from "./EditCourseBasicInfo";
 
-function CourseBasicInfo({ course,refreshData }) {
+function CourseBasicInfo({ course,refreshData}) {
   return (
     <div className="border p-6 rounded-lg shadow-md mt-6 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -12,7 +12,7 @@ function CourseBasicInfo({ course,refreshData }) {
             {course?.courseOutput?.course?.name}<EditCourseBasicInfo course={course} refreshData={()=>refreshData(true)}/>
           </h2>
           <p className="text-sm text bg-white mt-4">
-            {course?.courseOutput?.course?.description}
+            {course?.courseOutput?.course?.courseName}
           </p>
           <h2 className="flex items-center gap-2 mt-4 text-purple-600" ><HiOutlinePuzzle/>Health</h2>
           <button className="bg-primary  text-purple-600 py-2 px-6 rounded mt-6">
