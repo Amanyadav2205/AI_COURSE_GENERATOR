@@ -10,5 +10,6 @@ export const CourseList=pgTable('courseList',{
      courseOutput:json('courseOutput').notNull(),
      createdBy:varchar('createdBy').notNull(),
      userName:varchar('username'),
-     userProfileImage:varchar('userProfileImage')
+     userProfileImage:varchar('userProfileImage'),
+     
 }) 

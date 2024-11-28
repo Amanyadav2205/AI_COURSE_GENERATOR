@@ -1,63 +1,84 @@
 import React from "react";
 import Image from "next/image";
-import { HiOutlinePuzzle } from "react-icons/hi";
-import EditCourseBasicInfo from "./EditCourseBasicInfo";
+import { Button } from "@/components/ui/button";
+import { HiOutlinePuzzlePiece } from "react-icons/hi2";
+import { HiMiniLightBulb } from "react-icons/hi2";
 
-function CourseBasicInfo({ course,refreshData}) {
+function CourseBasicInfo({ course }) {
   return (
-    <div className="border p-6 rounded-lg shadow-md mt-6 bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div 
+      className="border p-6 rounded-xl shadow-md mt-6 bg-white mx-auto gap-4" 
+      style={{ maxWidth: "1200px", minHeight: "200px" }} // Adjust minHeight as needed
+    >
+      {/* Inner Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+        {/* Left Section: Title and Description */}
         <div>
           <h2 className="font-bold text-3xl text-purple-500">
-            {course?.courseOutput?.course?.name}<EditCourseBasicInfo course={course} refreshData={()=>refreshData(true)}/>
+            {course?.courseOutput?.courseName}
           </h2>
-          <p className="text-sm text bg-white mt-4">
-            {course?.courseOutput?.course?.courseName}
+          <p className="text-sm mt-4 text-gray-600 max-w-xs">
+            {course?.courseOutput?.description}
           </p>
-          <h2 className="flex items-center gap-2 mt-4 text-purple-600" ><HiOutlinePuzzle/>Health</h2>
-          <button className="bg-primary  text-purple-600 py-2 px-6 rounded mt-6">
+
+          <h2 className="flex items-center gap-2 mt-4 text-purple-600 text-lg font-semibold">
+          <Image src = {'/light-bulb.gif'} width={35} height = {35}/>
+
+             {course?.courseOutput?.category}
+          </h2>
+
+          <Button className="bg-primary w-1/2 text-white py-2 px-6 rounded-lg mt-6">
             Start
-          </button>
+          </Button>
         </div>
-        
-        <div>
+
+        {/* Right Section: Image */}
+        <div className="flex justify-center p-10 bg-gray-300 rounded-md">
           <Image
-            src={"/place.png"}
+            src={'/placeholder.png'}
             alt="Course Image"
-            width={100}
-            height={100}
-            className="w-full h-[300px] object-cover rounded-lg"
+            width={170} // Increased width
+            height={170} // Increased height
+            className="rounded-lg"
           />
         </div>
       </div>
+        
     </div>
   );
 }
 
 export default CourseBasicInfo;
 
-// import React from "react";
-// import Image from "next/image";
-// import { HiOutlinePuzzle } from "react-icons/hi";
-
-// function CourseBasicInfo({course}){
-//     return(
-//         <div className='p-10 border rounded-xl shadow-sm mt-5'>
-//             <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-//                 <div>
-//                     <h2 className="font-bold text-3xl">{course?.courseOutput?.course?.name}</h2>
-//                     <p className="text-sm text-gray-400 mt-3 ">{course?.courseOutput?.course?.description}</p>
-//                     <h2 className='font-medium mt-2 flex gap-2 items-center text-primary'>Health</h2>
-//                     <button className="w-full mt-5" >Start</button>
-//                 </div>
-//                 <div>
-//                     <Image src={'/place.png'} width={50} height={100}
-//                     className='w-full round-xl h-[300px] object-cover'/>
-//                 </div>
-//             </div>
-            
+// function CourseBasicInfo({ course,refreshData}) {
+//   return (
+//     <div className="border p-6 rounded-lg shadow-md mt-6 bg-white">
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+//         <div>
+//           <h2 className="font-bold text-3xl text-purple-500">
+//             {course?.courseOutput?.course?.name}<EditCourseBasicInfo course={course} refreshData={()=>refreshData(true)}/>
+//           </h2>
+//           <p className="text-sm text bg-white mt-4">
+//             {course?.courseOutput?.course?.courseName}
+//           </p>
+//           <h2 className="flex items-center gap-2 mt-4 text-purple-600" ><HiOutlinePuzzle/></h2>
+//           <button className="bg-primary  text-purple-600 py-2 px-6 rounded mt-6">
+//             Start
+//           </button>
 //         </div>
-//     )
+        
+//         <div>
+//           <Image
+//             src={"/place.png"}
+//             alt="Course Image"
+//             width={100}
+//             height={100}
+//             className="w-full h-[300px] object-cover rounded-lg"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
 // }
 
-// export default CourseBasicInfo
+// export default CourseBasicInfo;
