@@ -7,10 +7,15 @@ import { and, eq } from "drizzle-orm";
 import CourseBasicInfo from "./_components/CourseBasicinfo";
 import CourseDetail from "./_components/CourseDetail";
 import ChapterList from "./_components/ChapterList";
+import { Button } from "@/components/ui/button";
+import { index } from "drizzle-orm/mysql-core";
+import { GenerateChapterContent_AI } from "@/configs/AiModel";
+import LoadingDialog from "../_components/LoadingDialog";
 
 function CourseLayout({params}) {
   const { user } = useUser();
   const [course, setCourse] = useState();
+  const [loading,setLoading] = useState(false )
   
 
 
@@ -33,11 +38,38 @@ function CourseLayout({params}) {
           setCourse(result[0]);
           console.log(result);
   }
+
+  const GenerateChapterContent=()=>{
+    setLoading(true);
+    const chapters =  course?.courseOutput?.chapters;
+    chapters.forEach(async(chapter,index) =>{
+      const PROMPT= 'Explain the concept in Detail on Topic: '+course?.name+', Chapter: '+chapter.chapterName+', in JSON Format with list of array with field as title, description in detail,Code Example(HTML Code field in <precode> Format) is applicable';
+      console.log(PROMPT)
+
+      if(index < 3 ){
+        try {
+          const result = await GenerateChapterContent_AI.sendMessage(PROMPT);
+          console.log(result?.response?.text());
+
+          //Generate Video URL
+
+          // Save Chapter Content + Video URL
+          setLoading(false)
+        }catch(e)
+        {
+          setLoading(false);
+          console.log(e)
+        }
+      }
+    })
+  }
   return (
     <div className="mt-10 px-5 md:px-16 lg:px-32">
         <h2 className="font-bold text-center text-2xl text-primary">
            Course Layout
           </h2>
+
+          <LoadingDialog loading={loading}/>
 
           {/* Basic Info */}
           <CourseBasicInfo course={course} />
@@ -47,6 +79,8 @@ function CourseLayout({params}) {
 
            {/* List of Lessons */}
          <ChapterList course={course} />
+
+         <Button onClick = {GenerateChapterContent} className = "my-10"> Generate Course Content</Button>
      </div>     
   )
 
