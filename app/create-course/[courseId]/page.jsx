@@ -4,7 +4,7 @@ import { useUser } from "@clerk/nextjs";
 import { db } from "@/configs/db";
 import React, { useEffect, useState } from "react";
 import { and, eq } from "drizzle-orm";
-import CourseBasicInfo from "./_components/CourseBasicInfo";
+import CourseBasicInfo from "./_components/CourseBasicinfo";
 import CourseDetail from "./_components/CourseDetail";
 import ChapterList from "./_components/ChapterList";
 
@@ -49,6 +49,8 @@ function CourseLayout({params}) {
          <ChapterList course={course} />
      </div>     
   )
+
+  
 }
 export default CourseLayout
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { HiClock, HiOutlineBadgeCheck } from "react-icons/hi";
+import EditChapters from "./EditChapters";
 
 function ChapterList({ course }) {
   return (
@@ -21,8 +22,7 @@ function ChapterList({ course }) {
               {/* Chapter Details */}
               <div>
                 <h2 className="text-2xl font-extrabold text-black">
-                  {chapter?.chapterName}
-                </h2>
+                  {chapter?.chapterName} <EditChapters course={course} index={index}/></h2>
                 <p className="text-sm text-purple-500 mt-1">{chapter?.about}</p>
                 <p className="flex gap-2 items-center text-primary mt-2">
                   <HiClock />

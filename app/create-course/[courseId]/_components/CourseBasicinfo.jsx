@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { HiOutlinePuzzlePiece } from "react-icons/hi2";
 import { HiMiniLightBulb } from "react-icons/hi2";
+import EditCourseBasicInfo from "./EditCourseBasicInfo";
 
 function CourseBasicInfo({ course }) {
+
+  const [selectedFile,setSelectedFile]=useState();
+  const onFileSelected=(event)=>{
+  const file=event.target.files[0];
+  setSelectedFile(URL.createObjectURL(file));
+    
+
+  }
   return (
     <div 
       className="border p-6 rounded-xl shadow-md mt-6 bg-white mx-auto gap-4" 
       style={{ maxWidth: "1200px", minHeight: "200px" }} // Adjust minHeight as needed
     >
       {/* Inner Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start"> 
         {/* Left Section: Title and Description */}
         <div>
           <h2 className="font-bold text-3xl text-purple-500">
-            {course?.courseOutput?.courseName}
+            {course?.courseOutput?.courseName} <EditCourseBasicInfo course={course}/>
           </h2>
           <p className="text-sm mt-4 text-gray-600 max-w-xs">
             {course?.courseOutput?.description}
@@ -33,17 +42,28 @@ function CourseBasicInfo({ course }) {
         </div>
 
         {/* Right Section: Image */}
-        <div className="flex justify-center p-10 bg-gray-300 rounded-md">
-          <Image
-            src={'/placeholder.png'}
-            alt="Course Image"
-            width={170} // Increased width
-            height={170} // Increased height
-            className="rounded-lg"
-          />
-        </div>
+        <div className="flex justify-center p-4 bg-white-200 rounded-md relative">
+  <label htmlFor="upload-image" className="cursor-pointer">
+    <Image
+      src={selectedFile ? selectedFile : '/place.png'}
+      alt="Course Image"
+      width={250} // Default width for placeholder image
+      height={250} // Default height for placeholder image
+      className={`rounded-xl object-cover cursor-pointer transition-all ${
+        selectedFile ? "w-auto h-auto max-w-full max-h-[300px]" : "w-[250px] h-[250px]"
+      }`}
+    />
+  </label>
+  <input
+    type="file"
+    id="upload-image"
+    className="absolute inset-0 opacity-0 cursor-pointer"
+    onChange={onFileSelected}
+  />
+</div>
+
       </div>
-        
+
     </div>
   );
 }
