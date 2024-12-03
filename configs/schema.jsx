@@ -1,4 +1,5 @@
-import { json,pgTable,serial,varchar } from "drizzle-orm/pg-core";
+import { json,pgTable,serial,varchar,integer } from "drizzle-orm/pg-core";
+
 
 export const CourseList=pgTable('courseList',{
      id:serial('id').primaryKey(),
@@ -10,6 +11,16 @@ export const CourseList=pgTable('courseList',{
      courseOutput:json('courseOutput').notNull(),
      createdBy:varchar('createdBy').notNull(),
      userName:varchar('username'),
-     userProfileImage:varchar('userProfileImage'),
-     
+     userProfileImage:varchar('userProfileImage'),    
 }) 
+
+
+
+export const chapters = pgTable('chapter', {
+     id: serial('id').primaryKey(),
+     courseId: varchar('courseid').notNull(), // Corrected the semicolon to a colon
+     chapterId: integer('chapterId').notNull(),
+     content: json('content').notNull(),
+     videoId: varchar('videoId').notNull(),
+ });
+ 

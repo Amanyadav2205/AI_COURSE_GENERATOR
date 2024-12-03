@@ -11,11 +11,16 @@ import { Button } from "@/components/ui/button";
 import { index } from "drizzle-orm/mysql-core";
 import { GenerateChapterContent_AI } from "@/configs/AiModel";
 import LoadingDialog from "../_components/LoadingDialog";
+import service from "@/configs/service";
+import { Content } from "@radix-ui/react-accordion";
+import { useRouter } from 'next/router';
+
 
 function CourseLayout({params}) {
   const { user } = useUser();
   const [course, setCourse] = useState();
-  const [loading,setLoading] = useState(false )
+  const [loading,setLoading] = useState(false );
+  //const router=useRouter();
   
 
 
@@ -46,20 +51,39 @@ function CourseLayout({params}) {
       const PROMPT= 'Explain the concept in Detail on Topic: '+course?.name+', Chapter: '+chapter.chapterName+', in JSON Format with list of array with field as title, description in detail,Code Example(HTML Code field in <precode> Format) is applicable';
       console.log(PROMPT)
 
-      if(index < 3 ){
+      if(index<3)
+      {
         try {
-          const result = await GenerateChapterContent_AI.sendMessage(PROMPT);
-          console.log(result?.response?.text());
+          //let videoId='';
 
           //Generate Video URL
+          //service.getVideos(course?.name+':'+chapter.chapterName).then(resp=>{
+            //console.log(resp);
+            //videoId=resp[0]?.id?.videoId
+           //})
 
+          //generate chapter content 
+          //const result = await GenerateChapterContent_AI.sendMessage(PROMPT);
+          //console.log(result?.response?.text());
+          //const content=JSON.parse(result?.response?.text());
+
+          /
+           
           // Save Chapter Content + Video URL
+          //await db.insert(chapters).values({
+            //chapterId:index,
+            //courseId:course?.courseId,
+            //Content:content,
+            //videoId:videoId
+
+          //})
           setLoading(false)
         }catch(e)
         {
           setLoading(false);
           console.log(e)
         }
+        //router.replace('/create-course/'+course?.courseId+"/finish");
       }
     })
   }

@@ -12,7 +12,7 @@ function CourseBasicInfo({ course }) {
   const file=event.target.files[0];
   setSelectedFile(URL.createObjectURL(file));
     
-
+ 
   }
   return (
     <div 
