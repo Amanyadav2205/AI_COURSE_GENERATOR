@@ -6,7 +6,7 @@ function Hero() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 text-white h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-blue-700 via-white-300 to-pink-300 text-white h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
       {/* Background Animation */}
       <div className="absolute inset-0">
         <div className="bg-gradient-to-r from-purple-300 via-blue-400 to-indigo-600 opacity-40 w-72 h-72 rounded-full blur-3xl animate-pulse top-10 left-10"></div>
@@ -15,7 +15,7 @@ function Hero() {
 
       {/* Main Content */}
       <div className="z-10 text-center">
-        <h1 className="text-5xl sm:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-red-400 to-pink-600 drop-shadow-md">
+        <h1 className="text-5xl sm:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-00 to-yellow-300 drop-shadow-md">
           Welcome to Teacher.io
         </h1>
         <p className="mt-8 text-lg sm:text-xl text-white/90 max-w-2xl leading-relaxed mx-auto">

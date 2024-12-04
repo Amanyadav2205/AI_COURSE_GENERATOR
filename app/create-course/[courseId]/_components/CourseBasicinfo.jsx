@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { HiOutlinePuzzlePiece } from "react-icons/hi2";
 import { HiMiniLightBulb } from "react-icons/hi2";
 import EditCourseBasicInfo from "./EditCourseBasicInfo";
+import Link from "next/link";
 
-function CourseBasicInfo({ course }) {
+function CourseBasicInfo({ course,edit=true }) {
 
   const [selectedFile,setSelectedFile]=useState();
   const onFileSelected=(event)=>{
@@ -24,7 +25,7 @@ function CourseBasicInfo({ course }) {
         {/* Left Section: Title and Description */}
         <div>
           <h2 className="font-bold text-3xl text-purple-500">
-            {course?.courseOutput?.courseName} <EditCourseBasicInfo course={course}/>
+            {course?.courseOutput?.courseName} {edit&& <EditCourseBasicInfo course={course}  />}
           </h2>
           <p className="text-sm mt-4 text-gray-600 max-w-xs">
             {course?.courseOutput?.description}
@@ -36,9 +37,11 @@ function CourseBasicInfo({ course }) {
              {course?.courseOutput?.category}
           </h2>
 
+          {!edit&&<Link href={'/course/'+course?.courseId+"/start"}>
           <Button className="bg-primary w-1/2 text-white py-2 px-6 rounded-lg mt-6">
             Start
           </Button>
+          </Link>}
         </div>
 
         {/* Right Section: Image */}
