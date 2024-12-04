@@ -67,7 +67,7 @@ function CourseLayout({params}) {
           //console.log(result?.response?.text());
           //const content=JSON.parse(result?.response?.text());
 
-          /
+          
            
           // Save Chapter Content + Video URL
           //await db.insert(chapters).values({
