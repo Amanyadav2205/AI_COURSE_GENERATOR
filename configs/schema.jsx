@@ -9,7 +9,7 @@ export const CourseList=pgTable('courseList',{
      level:varchar('level').notNull(),
      includeVideo:varchar('includeVideo').notNull().default('Yes'),
      courseOutput:json('courseOutput').notNull(),
-     createdBy:varchar('createdBy').notNull(),
+     createdBy:varchar('createdBy'),
      userName:varchar('username'),
      userProfileImage:varchar('userProfileImage'),    
 }) 

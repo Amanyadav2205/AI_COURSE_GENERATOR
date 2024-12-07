@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center px-6 py-4 shadow-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-600 text-white">
+    <header className="flex justify-between items-center px-6 py-4 shadow-lg bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 text-white">
       {/* Logo and Title */}
       <div className="flex items-center space-x-3">
         <Image src="/logo.svg" width={50} height={50} alt="Teacher.io Logo" />
-        <h1 className="text-2xl font-extrabold tracking-wide">Teacher.io</h1>
+        <h1 className="text-2xl font-extrabold tracking-wide text-black">Teacher.io</h1>
       </div>
 
       {/* Navigation Menu */}
@@ -137,6 +137,11 @@ export default Header;
 // }
 
 // export default Header;
+
+
+
+
+
 
 
 
