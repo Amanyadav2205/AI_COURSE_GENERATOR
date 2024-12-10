@@ -30,7 +30,7 @@ function CourseCard({ course, refreshData }) {
 
             <Link href={'/course/' + course?.courseId}>
                 <Image src={course?.courseBanner} width={300} height={200}
-                    className='w-full h-[200px] object-cover rounded-lg'
+                    className='w-full h-[200px] object-cover rounded-lg' alt='Img'
                 />
             </Link>
             <div className='p-2 '>

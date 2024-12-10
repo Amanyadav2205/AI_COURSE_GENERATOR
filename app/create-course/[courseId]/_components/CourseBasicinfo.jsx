@@ -32,7 +32,7 @@ function CourseBasicInfo({ course,edit=true }) {
           </p>
 
           <h2 className="flex items-center gap-2 mt-4 text-purple-600 text-lg font-semibold">
-          <Image src = {'/light-bulb.gif'} width={35} height = {35}/>
+          <Image src = {'/light-bulb.gif'} width={35} height = {35} alt="Image"/>
 
              {course?.courseOutput?.category}
           </h2>

@@ -27,13 +27,7 @@ const Header = () => {
       </nav>
 
       {/* Call to Action */}
-      <a
-        href="#get-started"
-        className="hidden sm:inline-block bg-yellow-400 text-black px-6 py-2 rounded-full text-lg font-semibold shadow-md hover:bg-yellow-500 transition duration-300"
-      >
-        Get Started
-      </a>
-
+      
       {/* Mobile Menu Button */}
       <div className="md:hidden flex items-center">
         <button

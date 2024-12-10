@@ -9,8 +9,8 @@ import { ModeToggle } from '@/components/ui/ModeToggle';
 function Header() {
   return (
     <div className = 'flex justify-between items-center p-7 shadow-sm'>
-      <Image src = {'/logo.svg'} width = {50} height = {50}/>
-      <Image src = {'/image.png'} width = {50} height = {50}/>
+      <Image src = {'/logo.svg'} width = {50} height = {50} alt="Image"/>
+      <Image src = {'/image.png'} width = {50} height = {50} alt="Image"/>
       
       <div className = 'flex gap-5'>
       <ModeToggle/>

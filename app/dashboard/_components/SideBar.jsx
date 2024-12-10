@@ -40,11 +40,9 @@ function SideBar() {
     const path = usePathname();
   return (
     <div className = 'fixed h-full md:w-64 p-5 shadow-md'>
-      <Image src = {'/logo2.svg'} width={60} height= {70} /> 
+      <Image src = {'/logo2.svg'} width={60} height= {70} alt="Image" /> 
     
       <hr  className = 'my-5'/>
-      
-     
       <ul>
         {Menu.map((item,index)=>(
             <Link href={item.path}>

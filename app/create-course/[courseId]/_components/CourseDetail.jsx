@@ -12,7 +12,7 @@ function CourseDetail({ course }) {
     <div className="border p-6 rounded-lg shadow-md mt-6 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="flex items-center gap-4">
-        <Image src = {'/customer-satisfaction.gif'} width={45} height = {45}/>
+        <Image src = {'/customer-satisfaction.gif'} width={45} height = {45} alt="Image"/>
           {/* <HiChartBar className="text-4xl  text-purple-600" /> */}
           <div>
             <h2 className="text-xs text-gray-500">Skill Level</h2>
@@ -21,7 +21,7 @@ function CourseDetail({ course }) {
         </div>
 
         <div className="flex items-center gap-4">
-        <Image src = {'/wait.gif'} width={45} height = {45}/>
+        <Image src = {'/wait.gif'} width={45} height = {45} alt="Image"/>
           
           <div>
             <h2 className="text-xs text-gray-500">Duration</h2>
@@ -32,7 +32,7 @@ function CourseDetail({ course }) {
         </div>
 
         <div className="flex items-center gap-4">
-        <Image src = {'/countdown.gif'} width={45} height = {45}/>
+        <Image src = {'/countdown.gif'} width={45} height = {45} alt="Image"/>
           
           <div>
             <h2 className="text-xs text-gray-500">No of Chapters</h2>
@@ -43,7 +43,7 @@ function CourseDetail({ course }) {
         </div>
 
         <div className="flex items-center gap-4">
-        <Image src = {'/play.gif'} width={45} height = {45}/>
+        <Image src = {'/play.gif'} width={45} height = {45} alt="Image"/>
           
           <div>
             <h2 className="text-xs text-gray-500">Video Included?</h2>
