@@ -46,12 +46,16 @@ function CourseLayout({params}) {
 
   const GenerateChapterContent = async () => {
     setLoading(true);
-    const chapters = course?.courseOutput?.chapters;
+    const chapters = (course?.courseOutput?.chapters || course?.courseOutput?.Chapters);
   
     for (const [index, chapter] of chapters.entries()) {
       
-        try {
-          const PROMPT = `Explain the concept in Detail on Topic: ${course?.name}, Chapter: ${chapter.chapterName}, in JSON Format with list of array with field as title, description in detail, Code Example (HTML Code field in <precode> Format) is applicable`;
+      try {
+        const PROMPT = 'Explain the concept in Detail on Topic: ' 
+                       + course?.name 
+                       + ', Chapter: ' 
+                       + (chapter?.chapterName || Chapters?.ChapterName) 
+                       + ', in JSON Format with list of array with field as title, description in detail, Code Example (HTML Code field in <precode> Format) is applicable';
   
           console.log(PROMPT);
   
@@ -102,7 +106,9 @@ function CourseLayout({params}) {
            {/* List of Lessons */}
          <ChapterList course={course} />
 
-         <Button onClick = {GenerateChapterContent} className = "my-10"> Generate Course Content</Button>
+         <Button onClick = {GenerateChapterContent} className = "my-10">Generate Course Content</Button>
+
+         
      </div>     
   )
 

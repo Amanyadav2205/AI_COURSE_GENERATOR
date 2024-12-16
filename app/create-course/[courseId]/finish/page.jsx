@@ -52,6 +52,8 @@ function FinishScreen({params}) {
       <HiOutlineClipboardDocument className='h-5 w-5 cursor-pointer' 
       onClick={async()=>await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_HOST_NAME+"/course/view/"+course?.courseId)} />
       </h2>
+
+     
     </div>
   )
 }

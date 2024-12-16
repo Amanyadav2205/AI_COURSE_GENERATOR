@@ -25,16 +25,19 @@ function CourseBasicInfo({ course,edit=true }) {
         {/* Left Section: Title and Description */}
         <div>
           <h2 className="font-bold text-3xl text-purple-500">
-            {course?.courseOutput?.courseName} {edit&& <EditCourseBasicInfo course={course}  />}
+            {course?.courseOutput?.courseName} {course?.courseOutput?.CourseName}{edit&& <EditCourseBasicInfo course={course}  />}
           </h2>
           <p className="text-sm mt-4 text-gray-600 max-w-xs">
             {course?.courseOutput?.description}
+            {course?.courseOutput?.Description}
+
           </p>
 
           <h2 className="flex items-center gap-2 mt-4 text-purple-600 text-lg font-semibold">
           <Image src = {'/light-bulb.gif'} width={35} height = {35} alt="Image"/>
 
              {course?.courseOutput?.category}
+             {course?.courseOutput?.Category}
           </h2>
 
           {!edit&&<Link href={'/course/'+course?.courseId+"/start"}>

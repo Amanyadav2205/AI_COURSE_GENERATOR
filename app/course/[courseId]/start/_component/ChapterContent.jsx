@@ -13,14 +13,14 @@ const opts = {
   },
 };
 
-const ChapterContent = ({ chapter, content }) => {
+const ChapterContent = ({ chapter,Chapters,content }) => {
   // Safeguard to ensure content exists
   const sections = content?.content?.sections;
 
   return (
     <div className="p-6 max-w-screen-lg">
       {/* Chapter Header */}
-      <h2 className='font-bold text-2xl'>{chapter?.chapterName}</h2>
+      <h2 className='font-bold text-2xl'>{chapter?.chapterName || Chapters?.ChapterName}</h2>
       <p className='text-gray-500'>{chapter?.about}</p>
 
       {/* Video Section */}
@@ -38,8 +38,10 @@ const ChapterContent = ({ chapter, content }) => {
           sections.map((section, index) => (
             <div key={index} className="p-5 bg-sky-100 mb-3 rounded-lg">
               <h3 className="font-medium text-lg">{section?.title || "Untitled Section"}</h3>
+              <h3 className="font-medium text-lg">{sections?.title || "Untitled Section"}</h3>
 
               <ReactMarkdown>{section?.description || "No description available."}</ReactMarkdown>
+              <ReactMarkdown>{sections?.description || "No description available."}</ReactMarkdown>
 
               {/* Optional Code Example */}
               {section?.codeExample && (

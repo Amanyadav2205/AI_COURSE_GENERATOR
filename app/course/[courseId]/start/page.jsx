@@ -49,7 +49,7 @@ function CourseStart({ params }) {
     <div className="flex">
       {/* LEFT Section (Sidebar) */}
       <div className="md:w-64 h-screen bg-blue-300 fixed">
-        <h2 className='bg-purple-300 p-5 m-2 text-lg font-bold'>{course?.courseOutput?.courseName || "Course Name"}</h2>
+        <h2 className='bg-purple-300 p-5 m-2 text-lg font-bold'>{course?.courseOutput?.courseName || "Course Name" || course?.courseOutput?.CourseName}</h2>
         {/* Display Chapter Index Below Course Name */}
         {course?.courseOutput?.chapters?.map((chapter, index) => (
             

@@ -16,7 +16,7 @@ function CourseDetail({ course }) {
           {/* <HiChartBar className="text-4xl  text-purple-600" /> */}
           <div>
             <h2 className="text-xs text-gray-500">Skill Level</h2>
-            <h2 className="font-medium text-lg">{course?.level}</h2>
+            <h2 className="font-medium text-lg">{course?.level}{course?.Level}</h2>
           </div>
         </div>
 
@@ -27,6 +27,7 @@ function CourseDetail({ course }) {
             <h2 className="text-xs text-gray-500">Duration</h2>
             <h2 className="font-medium text-lg">
               {course?.courseOutput?.duration}
+              {course?.courseOutput?.Duration}
             </h2>
           </div>
         </div>
@@ -37,7 +38,8 @@ function CourseDetail({ course }) {
           <div>
             <h2 className="text-xs text-gray-500">No of Chapters</h2>
             <h2 className="font-medium text-lg">
-              {course?.numberOfChapters}5
+              {course?.numberOfChapters}-
+              {course?.NoOfChapters}
             </h2>
           </div>
         </div>

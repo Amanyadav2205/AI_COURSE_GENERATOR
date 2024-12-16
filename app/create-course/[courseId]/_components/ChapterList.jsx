@@ -2,12 +2,32 @@ import React from "react";
 import { HiClock, HiOutlineBadgeCheck } from "react-icons/hi";
 import EditChapters from "./EditChapters";
 
+
+// function ChapterList({course}){
+//   return(
+//     <div>
+//       <h2>
+//         Chapters
+//       </h2>
+//       <div>
+//         {course?.courseOutput?.Chapters.map((chapter,index)=>(
+//           <div>
+//             <h2>{index+1}</h2>
+//           </div>
+//         ))}
+//       </div>
+
+//     </div>
+//   )
+// }
+// export default ChapterList
+
 function ChapterList({ course }) {
   return (
     <div className="m-4">
       <h2 className="text-2xl font-semibold m-9">Chapters</h2>
       <div className="mt-2 space-y-4">
-        {course?.courseOutput?.chapters.map((chapter, index) => (
+        {(course?.courseOutput?.chapters || course?.courseOutput?.Chapters)?.map((Chapters, index) => (
           <div
             key={index}
             className="flex items-start justify-between bg-gray-50 p-4 rounded-md  shadow-md gap-3 m-2"
@@ -22,11 +42,11 @@ function ChapterList({ course }) {
               {/* Chapter Details */}
               <div>
                 <h2 className="text-2xl font-extrabold text-black">
-                  {chapter?.chapterName} <EditChapters course={course} index={index}/></h2>
-                <p className="text-sm text-purple-500 mt-1">{chapter?.about}</p>
+                  {Chapters?.ChapterName || Chapters?.chapterName || Chapters?.Chapter_Name } <EditChapters course={course} index={index}/></h2>
+                <p className="text-sm text-purple-500 mt-1">{Chapters?.About || Chapters?.about}</p>
                 <p className="flex gap-2 items-center text-primary mt-2">
                   <HiClock />
-                  {chapter?.duration}
+                  {Chapters?.Duration}
                 </p>
               </div>
             </div>
