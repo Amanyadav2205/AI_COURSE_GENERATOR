@@ -4,7 +4,7 @@ const ChapterListCard = ({chapter,index}) => {
   return (
     <div className = ' grid grid-cols-5 p-3 border-b'>
       <div>
-        <h2 className ='p-2 bg-black text-white rounded-full w-8 h-8 text-center border-b'>{index+1}</h2>
+        <h2 className ='p-2 bg-black text-white rounded-full w-5 h-5 text-center border-b'></h2>
       </div>
 
       <div className ='col-span-4'>

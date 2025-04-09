@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Header from "./_components/Header";
-import Hero from "./_components/Hero";
+// import Hero from "./_components/Hero";
+import LandingPage from "./_components/LandingPage";
+
 
 export default function Home() {
   return (
@@ -9,7 +11,7 @@ export default function Home() {
     {/* Header*/}
     <Header/>
     {/* Hero section*/}
-    <Hero/>
+    <LandingPage/>
    </div>
   );
 }

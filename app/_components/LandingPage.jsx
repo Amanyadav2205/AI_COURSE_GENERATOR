@@ -9,10 +9,10 @@ import Footer from './Footer';
 function LandingPage() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <Features />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Pricing />
       <Footer />
     </div>

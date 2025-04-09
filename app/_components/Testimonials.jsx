@@ -6,11 +6,11 @@ function Testimonials() {
       <div className="max-w-screen-xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-gray-800">What Educators Are Saying</h2>
         <p className="mt-4 text-gray-600">
-          Hear from those who have transformed their teaching with Teacher.io.
+          Hear from those who have transformed their teaching with Vaidik-AI .
         </p>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <blockquote className="bg-gray-100 p-6 rounded">
-            <p>"Teacher.io transformed my teaching approach! My students are more engaged than ever."</p>
+            <p>"Vaidik-AI  transformed my teaching approach! My students are more engaged than ever."</p>
             <footer className="mt-4">— Alex Smith</footer>
           </blockquote>
         </div>

@@ -24,7 +24,7 @@ const UserCourseList = () => {
   }
   return (
     <div className = 'mt-10'>
-      <h2 className ='font-medium text-xl mb-3'>My Courses</h2>
+      {/* <h2 className ='font-medium text-xl mb-3'>My Courses</h2> */}
 
       <div className = 'grid grid-cols-2 md:grid-cols-2 lg-grid-3 gap-4'>
         {courseList?.length>0?courseList.map((course,index)=>(

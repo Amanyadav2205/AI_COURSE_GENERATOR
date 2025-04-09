@@ -43,7 +43,7 @@ const generationConfig = {
       {
         role: "user",
         parts: [
-          {text: "xplain the concept in Detail on Topic: Workout at home, Chapter: Warm-up, in JSON Format with list of array with field as title, description in detail,Code Example(HTML Code field in <precode> Format) is applicable\n"},
+          {text: "explain the concept in Detail on Topic: Workout at home, Chapter: Warm-up, in JSON Format with list of array with field as title, description in detail,Code Example(HTML Code field in <precode> Format) is applicable\n"},
         ],
       },
       {

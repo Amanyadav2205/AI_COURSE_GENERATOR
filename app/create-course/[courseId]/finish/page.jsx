@@ -7,6 +7,8 @@ import {and, eq } from "drizzle-orm";
 import React,{useState,useEffect} from "react";
 import CourseBasicInfo from "../_components/CourseBasicinfo";
 import { HiOutlineClipboardDocument } from "react-icons/hi2";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 function FinishScreen({params}) {
   const { user } = useUser();
@@ -38,7 +40,7 @@ function FinishScreen({params}) {
 
 
   return (
-    <div className='px-10 md:px-20 lg;px-44 my-7'>
+    <div className='px-10 md:px-20 lg;px-44 my-7 justify-center items-center'>
       <h2 className = 'text-center font-bold text-2xl my-3 text-purple-500'>Your Course is ready </h2>
 
       
@@ -52,8 +54,12 @@ function FinishScreen({params}) {
       <HiOutlineClipboardDocument className='h-5 w-5 cursor-pointer' 
       onClick={async()=>await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_HOST_NAME+"/course/view/"+course?.courseId)} />
       </h2>
-
-     
+      <div className=" my-4 flex items-center justify-center ">
+        <Link
+              href="/dashboard">
+     <Button className="my-4 items-center justify-center ">  See Course </Button>
+     </Link>
+     </div>
     </div>
   )
 }

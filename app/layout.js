@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Teacher.io",
+  title: "Vaidik-AI ",
   description: " ",
 };
 

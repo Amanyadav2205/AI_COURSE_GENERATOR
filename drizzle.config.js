@@ -7,6 +7,6 @@ export default {
   dialect: "postgresql",  
   schema: "./configs/schema.jsx",
   dbCredentials: {
-    url: "postgresql://AI-Course-Generator_owner:eI5l1pAmOHzx@ep-aged-dew-a5e5uhjt.us-east-2.aws.neon.tech/AI-Course-Generator?sslmode=require",
+    url: "postgresql://AI-Course-Generator_owner:eI5l1pAmOHzx@ep-aged-dew-a5e5uhjt-pooler.us-east-2.aws.neon.tech/AI-Course-Generator?sslmode=require",
   }
 };

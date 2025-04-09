@@ -1,7 +1,7 @@
 import { UserButton } from '@clerk/nextjs'
 import React from 'react'
 import AddCourse from './_components/AddCourse'
-import UserCourseList from './_components/UserCourseList'
+// import UserCourseList from './_components/UserCourseList'
 
 
 function Dashboard() {
@@ -10,7 +10,7 @@ function Dashboard() {
       <AddCourse/>
 
       {/* Display List of Course */}
-      <UserCourseList/>
+      {/* <UserCourseList/> */}
      
     </div>
   )
