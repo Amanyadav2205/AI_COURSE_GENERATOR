@@ -1,6 +1,14 @@
 Visit  **Vaidik-AI ** here :- https://teacherrio.vercel.app
 
 
+<img width="1440" alt="Screenshot 2025-01-15 at 03 03 11" src="https://github.com/user-attachments/assets/10324967-cb11-464e-ba13-0f7eb6eef21e" />
+
+
+<img width="1440" alt="Screenshot 2025-01-15 at 03 02 58" src="https://github.com/user-attachments/assets/22dcbdfb-3da8-4892-8427-15e9b10c9a25" />
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
