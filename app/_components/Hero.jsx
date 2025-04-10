@@ -381,7 +381,7 @@ function Hero() {
         </div>
 
         {/* Statistics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 mb-8 max-w-screen-xl mx-auto">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 mb-8 max-w-screen-xl mx-auto">
           <div className="text-center">
             <p className="text-3xl font-bold text-white">10k+</p>
             <p className="text-slate-400 text-sm">Educators</p>
@@ -398,7 +398,7 @@ function Hero() {
             <p className="text-3xl font-bold text-white">98%</p>
             <p className="text-slate-400 text-sm">Satisfaction</p>
           </div>
-        </div>
+        </div>  */}
       </div>
     </section>
   );
