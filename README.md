@@ -1,4 +1,4 @@
-Visit  **Vaidik-AI ** here :- https://vaidik-ai.vercel.app/
+Visit  **Vaidik-AI ** here :- https://vaidiikai.vercel.app/
 
 <img width="1413" alt="Screenshot 2025-04-10 at 16 16 03" src="https://github.com/user-attachments/assets/c6742a1d-e5a1-4601-b2f5-2eeceb6aab4f" />
 
